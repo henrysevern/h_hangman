@@ -7,15 +7,18 @@ def guess_letter():
     """
     
     """
-    right = []
-    wrong = []
+    correct = []
+    incorrect = []
 
-    guess = input("Guess a letter: ")
-    print(guess)
+    while True:
+        guess = input("Guess a letter: ")
+        
 
-    if guess in pick:
-        print("Yes")
-    else:
-        print("No")
+        if guess in pick:
+            correct.append(guess)
+            print("Correct:", correct)
+        else:
+            incorrect.append(guess)
+            print("Incorrect:", incorrect)
 
 guess_letter()
