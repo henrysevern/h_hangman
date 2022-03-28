@@ -1,3 +1,21 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
+
+words = ['hangman', 'python']
+pick = random.choice(words)
+
+def guess_letter():
+    """
+    
+    """
+    right = []
+    wrong = []
+
+    guess = input("Guess a letter: ")
+    print(guess)
+
+    if guess in pick:
+        print("Yes")
+    else:
+        print("No")
+
+guess_letter()
