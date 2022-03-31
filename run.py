@@ -25,8 +25,8 @@ def guess_letter():
    while True:
         print("------------------------------------------")
         
-        guess = input("Guess a letter: ")
-        not_allowed()
+        guess = input("Guess a letter: \n")
+        
         
         if guess in pick:
             index = 0
