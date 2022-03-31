@@ -3,14 +3,24 @@ import random
 words = ['hangman', 'python']
 pick = random.choice(words)
 
-def guess_letter():
+print("------------------------------------------")
+print(f"The word is {len(pick)} letters long\n")
+
+correct = ['_'] * len(pick)
+incorrect = []
+
+def update_word():
     """
     
     """
-    correct = []
-    incorrect = []
+    for i in correct:
+        print(i, end = " ")
+    print()
 
-    while True:
+update_word()
+
+def guess_letter():
+   while True:
         guess = input("Guess a letter: ")
         
 
@@ -20,5 +30,6 @@ def guess_letter():
         else:
             incorrect.append(guess)
             print("Incorrect:", incorrect)
+
 
 guess_letter()
