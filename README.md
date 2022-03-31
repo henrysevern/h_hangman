@@ -23,9 +23,13 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 
 Connect your GitHub repository and deploy as normal.
 
-## Constraints
+## Deployment
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+The site was deployed to Heroku. The steps to deploy are as follows: 
+  - From the Heroku dashboard, click the “Create new app” button.
+  - Once the app has been created, click on "Settings" tab.
+  - The next step is to add a couple of buildpacks to the application. Python first and then Node.js in the order as shown below;
+  ![Buildpacks](documentation/buildpacks.png)
+  - From there head to the "Deploy" tab, select the deployment method to GitHub and connect your GitHub account.
+  - Using the search button, such for the repository name (h_hangman in my case) and click "Connect" to link up.
+  - Scroll down and click "Deploy Branch" in the manual section. The page will be deployed and ready to view in a few seconds.
