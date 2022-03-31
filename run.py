@@ -1,5 +1,5 @@
 import random
-
+from hangman import HANGMAN
 words = ['hangman', 'python']
 pick = random.choice(words)
 
@@ -8,6 +8,8 @@ print(f"The word is {len(pick)} letters long\n")
 
 correct = ['_'] * len(pick)
 incorrect = []
+
+HANGMAN(len(incorrect))
 
 def update_word():
     """
@@ -22,9 +24,10 @@ update_word()
 def guess_letter():
    while True:
         print("------------------------------------------")
-        guess = input("Guess a letter: ")
         
-
+        guess = input("Guess a letter: ")
+        not_allowed()
+        
         if guess in pick:
             index = 0
             for i in pick:
@@ -35,6 +38,7 @@ def guess_letter():
         else:
             if guess not in incorrect:
                 incorrect.append(guess)
+                HANGMAN(len(incorrect))
             else:
                 print("That letter has already been guessed!")
             print(f"Incorrect: {incorrect}")
@@ -48,5 +52,13 @@ def guess_letter():
             print("You've won!")
             break
 
+def not_allowed():
+
+        allowed_characters = "abcdefghijklmnopqrstuvwxyz"
+
+        while (len(guess) != 1 or guess not in allowed_characters):
+            print("Oops, that is not a valid guess. Try again!")
+            guess = input("Guess a letter: ")
+        
 
 guess_letter()
