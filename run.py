@@ -33,8 +33,20 @@ def guess_letter():
                 index += 1
             update_word()
         else:
-            incorrect.append(guess)
-            print("Incorrect:", incorrect)
+            if guess not in incorrect:
+                incorrect.append(guess)
+            else:
+                print("That letter has already been guessed!")
+            print(f"Incorrect: {incorrect}")
+        
+        if len(incorrect) > 5:
+            print("You've lost!")
+            print(f"The word was {pick}!")
+            break
+    
+        if "_" not in correct:
+            print("You've won!")
+            break
 
 
 guess_letter()
