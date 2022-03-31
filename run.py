@@ -21,12 +21,17 @@ update_word()
 
 def guess_letter():
    while True:
+        print("------------------------------------------")
         guess = input("Guess a letter: ")
         
 
         if guess in pick:
-            correct.append(guess)
-            print("Correct:", correct)
+            index = 0
+            for i in pick:
+                if i == guess:
+                    correct[index] = guess
+                index += 1
+            update_word()
         else:
             incorrect.append(guess)
             print("Incorrect:", incorrect)
