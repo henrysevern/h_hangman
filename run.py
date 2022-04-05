@@ -1,11 +1,22 @@
 import random
-import time
+from time import sleep
 from hangman import HANGMAN
 words = ['hangman', 'python']
 pick = random.choice(words)
 
-print("------------------🐺------------------------")
-print(f"The word is {len(pick)} letters long\n {pick}")
+print("------------------------------------------")
+
+
+def delay():
+    for i in range(5):
+        print('.', end=' ')
+        sleep(.5)
+    print()
+
+
+print("Let me think of a word!")
+delay()
+print(f"The word is {len(pick)} letters long\n")
 
 correct = ['_'] * len(pick)
 incorrect = []
@@ -30,6 +41,8 @@ def guess_letter():
         print("------------------------------------------")
 
         attempt = input("Guess a letter: \n")
+        print("Let me check your guess!")
+        delay()
         guess = not_allowed(attempt)
         if guess in pick:
             index = 0
@@ -61,7 +74,6 @@ def not_allowed(attempt):
     allowed_characters = "abcdefghijklmnopqrstuvwxyz"
 
     while (len(attempt) != 1 or attempt not in allowed_characters):
-        time.sleep(2)
         print("Oops, that is not a valid guess. Try again!")
         attempt = input("Guess a letter: \n")
     return attempt
