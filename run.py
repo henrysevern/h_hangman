@@ -1,39 +1,46 @@
 import random
 from time import sleep
 from hangman import HANGMAN
+
+
+
 words = ['hangman', 'python']
 pick = random.choice(words)
-
-print("------------------------------------------")
+correct = ['_'] * len(pick)
+incorrect = []
 
 
 def delay():
+    """
+    Function calls a time delay on the program to slow gameplay a little.
+    "." are printed out in a loop in range of 5.
+    The function is used at the start ("let me think off a word!") and after
+    the user has guessed a letter.
+    """
     for i in range(5):
         print('.', end=' ')
         sleep(.5)
     print()
 
 
-print("Let me think of a word!")
-delay()
-print(f"The word is {len(pick)} letters long\n")
+def begin():
 
-correct = ['_'] * len(pick)
-incorrect = []
+    print("------------------------------------------")
+    print("Let me think of a word!")
+    delay()
+    print(f"The word is {len(pick)} letters long\n")
 
-HANGMAN(len(incorrect))
+    HANGMAN(len(incorrect))
 
 
 def update_word():
     """
-
+    Function prints out the correct letters and the underscores in the correct
+    list.
     """
     for i in correct:
         print(i, end=" ")
     print()
-
-
-update_word()
 
 
 def guess_letter():
@@ -70,7 +77,12 @@ def guess_letter():
 
 
 def not_allowed(attempt):
-
+    """
+    This function allows the user to only enter a valid value. (a-z and only 1
+    letter). The invalid guess will not be added to the incorrect list as
+    an attempt, instead will just pop up an error message and return the input
+    field.
+    """
     allowed_characters = "abcdefghijklmnopqrstuvwxyz"
 
     while (len(attempt) != 1 or attempt not in allowed_characters):
@@ -79,4 +91,20 @@ def not_allowed(attempt):
     return attempt
 
 
-guess_letter()
+def play_again():
+    play = input("Would you like to play again? y/n :\n")
+    if play == "y":
+        begin()
+    else:
+        print("Thank you for playing H's Hangman!")
+        delay()
+
+
+def main():
+    begin()
+    update_word()
+    guess_letter()
+    play_again()
+
+
+main()
