@@ -1,8 +1,7 @@
 import random
+import os
 from time import sleep
 from hangman import HANGMAN
-
-
 
 words = ['hangman', 'python']
 pick = random.choice(words)
@@ -21,6 +20,13 @@ def delay():
         print('.', end=' ')
         sleep(.5)
     print()
+
+
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def begin():
@@ -45,21 +51,33 @@ def update_word():
 
 def guess_letter():
     while True:
+
         print("------------------------------------------")
 
         attempt = input("Guess a letter: \n")
+        # User input
+
         print("Let me check your guess!")
         delay()
         guess = not_allowed(attempt)
+        # Delay funtion called on user guess checks if guess is valid entry
+
         if guess in pick:
             index = 0
             for i in pick:
                 if i == guess:
                     correct[index] = guess
                 index += 1
+                clear()
+            print(f"{attempt} was correct!")
             update_word()
+            HANGMAN(len(incorrect))
+            print(f"Incorrect: {incorrect}")
         elif guess.isalpha():
             if guess not in incorrect:
+                clear()
+                print(f"{attempt} was incorrect!")
+                update_word()
                 incorrect.append(guess)
                 HANGMAN(len(incorrect))
             else:
