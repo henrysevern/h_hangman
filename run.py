@@ -1,6 +1,9 @@
 import random
 import os
 import sys
+import colorama
+from colorama import Fore
+from colorama import Style
 from time import sleep
 from hangman import HANGMAN
 from word_bank import word_bank
@@ -72,14 +75,14 @@ def guess_letter():
                     correct[index] = guess
                 index += 1
                 clear()
-            print(f"{attempt} was correct!")
+            print(Fore.GREEN + f"{attempt} was correct!" + Style.RESET_ALL)
             update_word()
             HANGMAN(len(incorrect))
             print(f"Incorrect: {incorrect}")
         elif guess.isalpha():
             if guess not in incorrect:
                 clear()
-                print(f"{attempt} was incorrect!")
+                print(Fore.RED + f"{attempt} was incorrect!" + Style.RESET_ALL)
                 update_word()
                 incorrect.append(guess)
                 HANGMAN(len(incorrect))
