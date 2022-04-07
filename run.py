@@ -1,12 +1,15 @@
 import random
 import os
+import sys
 from time import sleep
 from hangman import HANGMAN
+from word_bank import word_bank
 
-words = ['hangman', 'python']
-pick = random.choice(words)
-correct = ['_'] * len(pick)
-incorrect = []
+
+def landing():
+    print("Welcome to H's Hangman!")
+    delay()
+    print("Please choose a catergory! a - animals w - words")
 
 
 def delay():
@@ -112,7 +115,8 @@ def not_allowed(attempt):
 def play_again():
     play = input("Would you like to play again? y/n :\n")
     if play == "y":
-        begin()
+        python = sys.executable
+        os.execl(python, python, * sys.argv)  #restarts the program
     else:
         print("Thank you for playing H's Hangman!")
         delay()
@@ -124,5 +128,30 @@ def main():
     guess_letter()
     play_again()
 
+
+landing()
+
+words = ['hangman', 'python']
+animals = ['dolphin', 'buzzard', 'elephant']
+
+choose = input()
+
+while True:
+    if choose == "w":
+        print("You chose words!")
+        pick = random.choice(words)
+        correct = ['_'] * len(pick)
+        incorrect = []
+        main()
+    elif choose == "a":
+        print("You chose animals!")
+        pick = random.choice(animals)
+        correct = ['_'] * len(pick)
+        incorrect = []
+        main()
+    else:
+        print("That is not a valid choice! Please choose again.")
+        choose = input()
+        choose
 
 main()
