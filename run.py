@@ -1,15 +1,18 @@
 import random
 import os
 import sys
-import colorama
 from colorama import Fore
 from colorama import Style
 from time import sleep
 from hangman import HANGMAN
-from word_bank import word_bank
+from word_bank import animals_text
+from word_bank import words, animals
 
 
 def landing():
+    """
+    Function for the landing with a welcome message and a catergory choice.
+    """
     print("Welcome to H's Hangman!")
     delay()
     print("Please choose a catergory! a - animals w - words")
@@ -36,10 +39,16 @@ def clear():
 
 
 def begin():
+    """
+    Function is called after a catergory has been chosen, prints "let me think
+    of a word!" withe the delay function and then give the user a hint on how
+    long the word is
+    """
 
     print("------------------------------------------")
     print("Let me think of a word!")
     delay()
+    clear()
     print(f"The word is {len(pick)} letters long\n")
 
     HANGMAN(len(incorrect))
@@ -56,6 +65,11 @@ def update_word():
 
 
 def guess_letter():
+    """
+    Function calls the guess input, checks wether the guess is correct,
+    incorrect or not valid. Also the loop is broken based on wether the
+    game is won or lost.
+    """
     while True:
 
         print("------------------------------------------")
@@ -108,24 +122,42 @@ def not_allowed(attempt):
     field.
     """
     allowed_characters = "abcdefghijklmnopqrstuvwxyz"
+    # String of only accepted characters.
 
     while (len(attempt) != 1 or attempt not in allowed_characters):
         print("Oops, that is not a valid guess. Try again!")
         attempt = input("Guess a letter: \n")
     return attempt
+    # Only allows the user to enter accepted characters and only 1 character
+    # at once
 
 
 def play_again():
+    """
+    Function is called at the end of the game to give the user a play again or
+    not choice.
+    """
     play = input("Would you like to play again? y/n :\n")
     if play == "y":
         python = sys.executable
-        os.execl(python, python, * sys.argv)  #restarts the program
-    else:
+        os.execl(python, python, * sys.argv)
+        # Restarts the program
+    elif play == "n":
         print("Thank you for playing H's Hangman!")
         delay()
+        quit()
+        # Exits the program
+    else:
+        print("That is not a valid choice")
+        play = input("Would you like to play again? y/n :\n")
+        play
+        # Brings the user back to the input if invalid choice is entered.
 
 
 def main():
+    """
+    Main function calling all other functions.
+    """
     begin()
     update_word()
     guess_letter()
@@ -134,8 +166,8 @@ def main():
 
 landing()
 
-words = ['hangman', 'python']
-animals = ['dolphin', 'buzzard', 'elephant']
+# words = ['hangman', 'python']
+# animals = ['dolphin', 'buzzard', 'elephant']
 
 choose = input()
 
@@ -148,6 +180,7 @@ while True:
         main()
     elif choose == "a":
         print("You chose animals!")
+        animals_text()
         pick = random.choice(animals)
         correct = ['_'] * len(pick)
         incorrect = []
