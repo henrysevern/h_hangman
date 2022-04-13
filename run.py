@@ -152,9 +152,9 @@ def play_again():
     """
     play = input("Would you like to play again? y/n :\n")
     if play == "y":
+        clear()
         python = sys.executable
         os.execl(python, python, * sys.argv)
-        clear()
         # Restarts the program
     elif play == "n":
         print("Thank you for playing H's Hangman!")

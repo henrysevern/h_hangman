@@ -6,8 +6,24 @@ Users pick a catergory and a word from that catergory will be randomly generated
 
 ## How to play 
 - H's Hangman is based on the classic paper and pencil guessing game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
+- In this version of hangman game, the player enters the game with a choice of catergories. The player has to choose a listed catergory in order to begin the game.
+- Once a catergory has been chosen the computer will think of a random word in relation to the chosen catergory. For exmaple if the user chooses capital cities the word would be a city somewher in the world.
+- The player gets to know how many letters the word contains by the amount of underscores and the default diagram of hangman is printed.
+- The player inputs a-z characters in a bid to guess the word. Everytime a correct character is entered the computer will tell them its correct and place the letter on the correct underscore, the hangman diagram will not change.
+- Everytime the player guesses incorrect the computer will tell them its incorrect, add the letter to the incorrect list and the diagram of hangman will gain an element/body part.
+- The player has 6 guesses all together to guess all the letters in the word before the completed diagram would mean the games been lost.
+- A simple yes(y) or no(n) at the end will let the player play again at end the game.
 
 ## Features
+# Welcome message/Landing page
+
+# Catergory choice 
+
+# After catergory selection
+
+# Hangman game
+
+# Play again function
 
 
 
@@ -40,3 +56,8 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
   ## Credits 
 
   - Hangman ASCII art was taken from https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+  - ASCII art was taken from https://www.asciiart.eu/
+  - Clear function, restart function, delay function with assistance from https://stackoverflow.com/
+  - Random words list taken from https://futureofworking.com/40-hardest-words-to-guess-in-hangman/
+  - Animals words list taken from https://gist.github.com/atduskgreg/3cf8ef48cb0d29cf151bedad81553a54
+
