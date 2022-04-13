@@ -1,12 +1,19 @@
 import random
+# imports random module for picking random words.
 import os
+# import os module for clear and play again functions.
 import sys
-from colorama import Fore
-from colorama import Style
+# imports sys module for play again function.
+from colorama import Fore, Style
+# imports colorama styles.
 from time import sleep
+# imports time module for delay function.
 from hangman import HANGMAN
-from word_bank import animals_text
-from word_bank import words, animals
+# imports the hangman art
+from word_bank import animals_t, cities_t, movies_t, food_t, words_t
+# imports all the text functions.
+from word_bank import words, animals, movies, cities, food
+# imports all the word lists.
 
 
 def landing():
@@ -15,7 +22,13 @@ def landing():
     """
     print("Welcome to H's Hangman!")
     delay()
-    print("Please choose a catergory! a - animals w - words")
+    print("Please choose a catergory!")
+    print("Input letter for choice;")
+    print("'a' - animals")
+    print("'c' - cities")
+    print("'f' - food")
+    print("'m' - movies")
+    print("'w' - random words")
 
 
 def delay():
@@ -141,10 +154,12 @@ def play_again():
     if play == "y":
         python = sys.executable
         os.execl(python, python, * sys.argv)
+        clear()
         # Restarts the program
     elif play == "n":
         print("Thank you for playing H's Hangman!")
         delay()
+        clear()
         quit()
         # Exits the program
     else:
@@ -165,23 +180,44 @@ def main():
 
 
 landing()
-
-# words = ['hangman', 'python']
-# animals = ['dolphin', 'buzzard', 'elephant']
+# landing function is called first thing.
 
 choose = input()
+# input for user to choose a catergory
 
 while True:
     if choose == "w":
         print("You chose words!")
+        words_t()
         pick = random.choice(words)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
     elif choose == "a":
         print("You chose animals!")
-        animals_text()
+        animals_t()
         pick = random.choice(animals)
+        correct = ['_'] * len(pick)
+        incorrect = []
+        main()
+    elif choose == "m":
+        print("You chose movies!")
+        movies_t()
+        pick = random.choice(movies)
+        correct = ['_'] * len(pick)
+        incorrect = []
+        main()
+    elif choose == "c":
+        print("You chose cities")
+        cities_t()
+        pick = random.choice(cities)
+        correct = ['_'] * len(pick)
+        incorrect = []
+        main()
+    elif choose == "f":
+        print("You choose food")
+        food_t()
+        pick = random.choice(food)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
@@ -189,5 +225,8 @@ while True:
         print("That is not a valid choice! Please choose again.")
         choose = input()
         choose
-
-main()
+    # While loop to call the chosen catergory.
+    # Corresponding print message and text function are called.
+    # Pick is given a value of random.choice of what catergory is chosen.
+    # Then correct and incorrect are given values.
+    # Finally main() function is called.
