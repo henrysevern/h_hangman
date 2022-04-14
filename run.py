@@ -91,7 +91,7 @@ def guess_letter():
         # User input
 
         print("Let me check your guess!")
-        delay()
+        # delay()
         guess = not_allowed(attempt)
         # Delay funtion called on user guess checks if guess is valid entry
 
@@ -99,19 +99,21 @@ def guess_letter():
             index = 0
             for i in pick:
                 if i == guess:
-                    correct[index] = guess
+                    correct[index] = guess.capitalize()
                 index += 1
                 clear()
-            print(Fore.GREEN + f"{attempt} was correct!" + Style.RESET_ALL)
+            print(Fore.GREEN + f"{attempt.capitalize()} was correct!" +
+                  Style.RESET_ALL)
             update_word()
             HANGMAN(len(incorrect))
             print(f"Incorrect: {incorrect}")
         elif guess.isalpha():
             if guess not in incorrect:
                 clear()
-                print(Fore.RED + f"{attempt} was incorrect!" + Style.RESET_ALL)
+                print(Fore.RED + f"{attempt.capitalize()} was incorrect!" +
+                      Style.RESET_ALL)
                 update_word()
-                incorrect.append(guess)
+                incorrect.append(guess.capitalize())
                 HANGMAN(len(incorrect))
             else:
                 print("That letter has already been guessed!")

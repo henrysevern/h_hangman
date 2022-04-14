@@ -2,7 +2,7 @@
 
 H's Hangman is a Python terminal game, which runs in the Code Institue mock terminal on Heroku.
 
-Users pick a catergory and a word from that catergory will be randomly generated. The user has to try to guess the word before with allocated guesses.
+Users pick a catergory and a word from that catergory will be randomly generated. The user has to try to guess the word before the diagram of hangman is completed with allocated guesses.
 
 ## How to play 
 - H's Hangman is based on the classic paper and pencil guessing game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
@@ -15,15 +15,15 @@ Users pick a catergory and a word from that catergory will be randomly generated
 - A simple yes(y) or no(n) at the end will let the player play again at end the game.
 
 ## Features
-# Welcome message/Landing page
+### Welcome message/Landing page
 
-# Catergory choice 
+### Catergory choice 
 
-# After catergory selection
+### After catergory selection
 
-# Hangman game
+### Hangman game
 
-# Play again function
+### Play again function
 
 
 

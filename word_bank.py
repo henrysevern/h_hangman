@@ -46,7 +46,7 @@ def movies_t():
     print(f"|_| |_| |_|\___/ \_/ |_|\___||___/")
 
 
-def words_t():                                  
+def words_t():
     print(f"                         ( )     ")
     print(f" _   _   _   _   _ __   _| | ___ ")
     print(f"( ) ( ) ( )/ _ \(  __)/ _  |  __)")
