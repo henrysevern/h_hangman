@@ -91,7 +91,11 @@ def guess_letter():
         # User input
 
         print("Let me check your guess!")
-        # delay()
+        for i in range(3):
+            print('.', end=' ')
+            sleep(.2)
+        print()
+        # Shorter delay for the check guess for cleaner gameplay
         guess = not_allowed(attempt)
         # Delay funtion called on user guess checks if guess is valid entry
 
@@ -189,37 +193,42 @@ choose = input()
 
 while True:
     if choose == "w":
+        clear()
         print("You chose words!")
         words_t()
-        pick = random.choice(words)
+        pick = random.choice(words).upper()
         correct = ['_'] * len(pick)
         incorrect = []
         main()
     elif choose == "a":
+        clear()
         print("You chose animals!")
         animals_t()
-        pick = random.choice(animals)
+        pick = random.choice(animals).upper()
         correct = ['_'] * len(pick)
         incorrect = []
         main()
     elif choose == "m":
+        clear()
         print("You chose movies!")
         movies_t()
-        pick = random.choice(movies)
+        pick = random.choice(movies).upper()
         correct = ['_'] * len(pick)
         incorrect = []
         main()
     elif choose == "c":
+        clear()
         print("You chose cities")
         cities_t()
-        pick = random.choice(cities)
+        pick = random.choice(cities).upper()
         correct = ['_'] * len(pick)
         incorrect = []
         main()
     elif choose == "f":
+        clear()
         print("You choose food")
         food_t()
-        pick = random.choice(food)
+        pick = random.choice(food).upper()
         correct = ['_'] * len(pick)
         incorrect = []
         main()
