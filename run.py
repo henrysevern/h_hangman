@@ -18,11 +18,11 @@ from word_bank import words, animals, movies, cities, food
 
 def landing():
     """
-    Function for the landing with a welcome message and a catergory choice.
+    Function for the landing with a welcome message and a category choice.
     """
     print("Welcome to H's Hangman!")
     delay()
-    print("Please choose a catergory!")
+    print("Please choose a category!")
     print("Input letter for choice;")
     print("'a' - animals")
     print("'c' - cities")
