@@ -25,7 +25,7 @@ Users pick a catergory and a word from that catergory will be randomly generated
 - In order to continue the player must input one of these letters.
 - The game will play after and choose a word based on the catergory, kind of giving the player a hint.
 - This makes gameplay more interactive for the player as they are given the choice on the what the word is based on.
-![Category](documentation/tests/catergory.png)
+![Category](documentation/tests/category.png)
 
 
 ### After catergory selection
@@ -63,7 +63,35 @@ Users pick a catergory and a word from that catergory will be randomly generated
 
 ## Testing
 
-For all testing documentation, please refer to the [TESTING.md](TESTING.md) file.
+### Code Validation
+- All code valiadation for python files has been checked on http://pep8online.com/.
+
+![run.py](documentation/testing/code-validation/run.png)
+
+- All code on run.py showed no errors or changes needed to be made.
+
+[hangman.py](documentation/testing/code-validation/hangman.png)
+
+- All code on hangman.py showed no errors or changes needed to be made.
+
+[word_bank.py](documentation/testing/code-validation/word_bank.png)
+
+- All code on word_bank.py showed no errors or changes needed to be made.
+- ASCII art in word_bank.py shows up 'invalid escape sequence' warnings on gitpod but clear the valiadator just fine.
+
+
+### Browser Compatibility and Responsiveness
+
+- Repository is being displayed through heroku website so code was checked on safari, chrome and firefox. 
+- Because the repository is being displayed through heroku app the website automatically adjusts the screen size and no media queries have been used.
+
+### Fixed Bugs
+- Bug fixed where the game would restart but still keep the word in place and the hangman art level from the previous round. This was fixed by using the restart method;
+![Restart](documentation/tests/restart.png)
+
+### Unfixed Bugs
+
+- Unfixed bug of where when an invalid answer is entered it prompts the error message which it is supposed to but then when the user enters a valid option after the invalid option will display in the overhead text, but will not the invalid option to incorrect or correct lists. Tried several but have been unable to troubleshoot this issue. Gameplay continues perfectly after just the guess after the invalid guess the bug appears.
 
 ## Deployment
 

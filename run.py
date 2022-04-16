@@ -196,7 +196,7 @@ while True:
         clear()
         print("You chose words!")
         words_t()
-        pick = random.choice(words).upper()
+        pick = random.choice(words)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
@@ -204,7 +204,7 @@ while True:
         clear()
         print("You chose animals!")
         animals_t()
-        pick = random.choice(animals).upper()
+        pick = random.choice(animals)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
@@ -212,7 +212,7 @@ while True:
         clear()
         print("You chose movies!")
         movies_t()
-        pick = random.choice(movies).upper()
+        pick = random.choice(movies)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
@@ -220,7 +220,7 @@ while True:
         clear()
         print("You chose cities")
         cities_t()
-        pick = random.choice(cities).upper()
+        pick = random.choice(cities)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
@@ -228,7 +228,7 @@ while True:
         clear()
         print("You choose food")
         food_t()
-        pick = random.choice(food).upper()
+        pick = random.choice(food)
         correct = ['_'] * len(pick)
         incorrect = []
         main()
