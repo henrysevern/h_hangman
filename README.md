@@ -4,6 +4,8 @@ H's Hangman is a Python terminal game, which runs in the Code Institue mock term
 
 Users pick a catergory and a word from that catergory will be randomly generated. The user has to try to guess the word before the diagram of hangman is completed with allocated guesses.
 
+![Mockup](documentation/tests/mockup.png)
+
 ## How to play 
 - H's Hangman is based on the classic paper and pencil guessing game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
 - In this version of hangman game, the player enters the game with a choice of catergories. The player has to choose a listed catergory in order to begin the game.
@@ -70,11 +72,11 @@ Users pick a catergory and a word from that catergory will be randomly generated
 
 - All code on run.py showed no errors or changes needed to be made.
 
-[hangman.py](documentation/testing/code-validation/hangman.png)
+![hangman.py](documentation/testing/code-validation/hangman.png)
 
 - All code on hangman.py showed no errors or changes needed to be made.
 
-[word_bank.py](documentation/testing/code-validation/word_bank.png)
+![word_bank.py](documentation/testing/code-validation/word_bank.png)
 
 - All code on word_bank.py showed no errors or changes needed to be made.
 - ASCII art in word_bank.py shows up 'invalid escape sequence' warnings on gitpod but clear the valiadator just fine.

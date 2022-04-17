@@ -1,4 +1,11 @@
-animals = ['dolphin', 'buzzard', 'elephant']
+animals = ['dolphin', 'buzzard', 'elephant', 'alligator', 'anaconda',
+           'anglerfish', 'anteater', 'antelope', 'barracuda', 'blackbird',
+           'butterfly', 'caterpillar', 'chameleon', 'dingo', 'dinosaur',
+           'earthworm', 'flamingo', 'firefly', 'grasshopper', 'gorilla',
+           'hedgehog', 'hippopotamus', 'hippopotamus', 'jellyfish',
+           'kingfisher', 'leopard', 'mackerel', 'octopus', 'orangutan',
+           'parrotfish', 'platypus', 'quokka', 'scorpion', 'tarantula',
+           'woodpecker']
 
 words = ['affix', 'avenue', 'awkward', 'beekeeper', 'boggle', 'cobweb',
          'cycle', 'disavow', 'duplex', 'equip', 'exodus', 'funny', 'galaxy',
@@ -7,11 +14,22 @@ words = ['affix', 'avenue', 'awkward', 'beekeeper', 'boggle', 'cobweb',
          'lengths', 'lucky', 'luxury', 'lymph', 'nightclub', 'onyx', 'ovary',
          'pajama', 'pneumonia', 'pshaw', 'puppy' 'scratch', 'staff', 'stretch']
 
-movies = ['avengers', 'titanic']
+movies = ['avengers', 'titanic', 'avatar', 'spiderman', 'batman',
+          'doctorstrange', 'harrypotter', 'matrix', 'transformers', 'red',
+          'deadpool', 'morbius', 'venom', 'expendables', 'rambo', 'diehard',
+          'aquaman', 'flash', 'ironman', 'hobbit', 'cars', 'jurassicpark']
 
-cities = ['london', 'sydney']
+cities = ['london', 'sydney', 'oslo', 'madrid', 'budapest', 'beijing',
+          'prague', 'copenhagen', 'athens', 'jakarta', 'jerusalem', 'tokyo',
+          'nairobi', 'monaco', 'amsterdam', 'wellington', 'islamabad', 'manila'
+          'warsaw', 'lisbon', 'singapore', 'damascus', 'stockholm', 'bangkok',
+          'washington']
 
-food = ['banana', 'grapefruit']
+food = ['apple', 'banana', 'blackcurrant', 'chocolate', 'chutney', 'croissant',
+        'coriander', 'eggplant', 'hummus', 'grapefruit', 'risotto' 'ribeye',
+        'strawberry', 'quesadilla', 'yogurt', 'sweetcorn', 'eclair', 'turkey',
+        'pitta', 'brioche', 'lasagne', 'schnitzel', 'sushi', 'ramen', 'tomato',
+        'potato', 'swede', 'lobster', 'mussels', 'passionfriut', 'melon']
 
 
 def animals_t():
